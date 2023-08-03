@@ -24,7 +24,7 @@ seedProxies()
   .finally(() => prisma.$disconnect());
 
   
-const apiUrl = 'https://kaspi.kz/yml/offer-view/offers/' || process.env.URL_STORE;
+const apiUrl = process.env.URL_STORE || 'https://kaspi.kz/yml/offer-view/offers/' ;
 
 async function fetchProductData(article) {
   const proxyList = await prisma.proxy.findMany();
